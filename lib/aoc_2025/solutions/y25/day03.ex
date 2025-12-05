@@ -25,12 +25,12 @@ defmodule Aoc2025.Solutions.Y25.Day03 do
       fn
         to_enable, {batteries, found} ->
           {search, rest} =
-            Enum.split(batteries, -to_enable + 1) |> dbg()
+            Enum.split(batteries, -to_enable + 1)
 
           search = if search == [], do: bank, else: search
           largest = Enum.max(search)
           next_set = Enum.drop_while(search, &(&1 != largest)) |> tl()
-          {next_set ++ rest, [largest | found]} |> dbg()
+          {next_set ++ rest, [largest | found]}
       end
     )
     |> elem(1)
