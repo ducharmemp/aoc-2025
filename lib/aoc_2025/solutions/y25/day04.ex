@@ -14,7 +14,7 @@ defmodule Aoc2025.Solutions.Y25.Day04 do
   end
 
   def part_two(problem) do
-    for row <- simulate_once(problem) |> dbg(),
+    for row <- simulate_once(problem),
         col <- row do
       if col == "x", do: 1, else: 0
     end
